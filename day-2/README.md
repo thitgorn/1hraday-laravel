@@ -1,29 +1,35 @@
 # Day2
 
-setup php myadmin
+## setup php myadmin
 
-install mysql
+```install mysql```
 
 copy generated password to somewhere
+
 // change mysql password
+
 ```cd /usr/local/mysql/bin```
 
 ```sudo ./mysql -u root -p```
-then enter copied password
+
+<b>then enter copied password</b>
+
+// change the password
 
 ```Alter user 'root'@'localhost' identified by '<new password>'```
 
 
 install phpmyadmin by
+
 mv phpmyadmin folder that downloaded to /Library/WebServer/Documents/phpmyadmin
 
 open mysql server
 
-then you can now open 
+then you can now open
 
 localhost/phpmyadmin
 
-to setup
+### to setup
 
 go to localhost/phpmyadmin/setup
 
@@ -31,12 +37,13 @@ use the same password as mysql
 
 Now you're rdy to go
 
-config 
+### config
 
 .env and .env.example
-
+```
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=<database table>
 DB_USERNAME=<username>
 DB_PASSWORD=<password>
+```
