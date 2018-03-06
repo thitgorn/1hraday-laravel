@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app()->getLocale() }}">
   <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Acme</title>
     <link rel="stylesheet" href="/css/app.css">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script>
+      $.ajaxSetup({
+      headers: {
+          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+      });
+    </script>
   </head>
   <body>
     @include('inc.navbar')
+    <div id="example"></div>
+    <script src="{{asset('js/app.js')}}" ></script>
 
     <div class="container">
       @if(Request::is('/'))
