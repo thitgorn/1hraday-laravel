@@ -37,5 +37,5 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 
 - get message from Message Object right the way
 - get message from Database sql
-- TODO use react in front end // today night
+- Set up React to laravel 5.6 project 
 - @see in Day-3 folder for more info of code
