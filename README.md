@@ -32,3 +32,10 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 - php artisan make:model -m , make database model migrations by -m and make model at /app/[model]
 - when connected to database run ```php artisan migration``` to create database table
 - @See in Day-2 folder for more info how to setup.
+
+### [Day-3](https://github.com/thitgorn/1hraday-laravel/tree/master/day-3)
+
+- get message from Message Object right the way
+- get message from Database sql
+- TODO use react in front end // today night
+- @see in Day-3 folder for more info of code
