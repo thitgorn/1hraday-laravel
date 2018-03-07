@@ -1,0 +1,20 @@
+.hideMe {
+    position: fixed;
+    width: 80%;
+    animation: fadeOut 5s;
+    visibility: hidden;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
