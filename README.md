@@ -4,6 +4,14 @@ coding at least one hour for each day learning laravel
 
 Practicing, internship at Rabbitstale.
 
+## Planing
+- follow by tutorial day-1-3
+
+```it's ok to take 2 day each task below.```
+- TODO list day-4
+- TODO list with react day-5
+- Login system day-6
+
 ### Day-0
 
 - install composer
@@ -37,5 +45,5 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 
 - get message from Message Object right the way
 - get message from Database sql
-- Set up React to laravel 5.6 project 
+- Set up React to laravel 5.6 project
 - @see in Day-3 folder for more info of code
