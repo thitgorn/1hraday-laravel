@@ -47,3 +47,13 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 - get message from Database sql
 - Set up React to laravel 5.6 project
 - @see in Day-3 folder for more info of code
+
+### [Day-4](https://github.com/thitgorn/1hraday-laravel/tree/master/day-4)
+
+- TODO list blade templete 
+- Connect to database
+
+### [Day-5](https://github.com/thitgorn/1hraday-laravel/tree/master/day-5)
+
+- TODO list with React
+- Reactive webapp communicate with database
