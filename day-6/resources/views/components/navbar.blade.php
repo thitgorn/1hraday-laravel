@@ -8,11 +8,15 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+                @guest
+                @else
                 <li>
-                  <a class="nav-link" href="/user">My Item</a>
+                  <a class="nav-link {{Request::is('user') ? 'active' : ''}}" href="/user">My Item</a>
                 </li>
+                @endguest
             </ul>
 
             <!-- Right Side Of Navbar -->
