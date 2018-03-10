@@ -50,7 +50,7 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 
 ### [Day-4](https://github.com/thitgorn/1hraday-laravel/tree/master/day-4)
 
-- TODO list blade templete 
+- TODO list blade templete
 - Connect to database
 
 ### [Day-5](https://github.com/thitgorn/1hraday-laravel/tree/master/day-5)
@@ -62,3 +62,9 @@ Example ```Route::post('/contact/submit', 'MessageController@submit');```
 
 - TODO list with seperate USER
 - User can view all task but can't edit another user task
+
+### [Day-7](https://github.com/thitgorn/1hraday-laravel/tree/master/day-7)
+
+- Nothing special
+- JUST redesigned TODO list from day-6
+- rewrite
