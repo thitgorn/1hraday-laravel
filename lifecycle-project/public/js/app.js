@@ -36043,6 +36043,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Controller_Controller__ = __webpack_require__(68);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36050,6 +36051,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -36069,6 +36072,9 @@ var App = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       // create Controller
+      var controller = __WEBPACK_IMPORTED_MODULE_2__Controller_Controller__["a" /* default */];
+      controller.createObject();
+      controller.start();
       // create GUI
     }
   }, {
@@ -53646,6 +53652,104 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 65 */,
+/* 66 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__grass_Grass_js__ = __webpack_require__(67);
+
+
+var ObjectController = {
+  genarateObject: function genarateObject(x, y) {
+    console.log(x + " " + y);
+    return new __WEBPACK_IMPORTED_MODULE_0__grass_Grass_js__["a" /* default */](x, y);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (ObjectController);
+
+/***/ }),
+/* 67 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+function Grass(x, y) {
+  this.x = x;
+  this.y = y;
+  this.size = 1;
+  this.move = function () {
+    // do nothing
+    console.log("moving");
+  };
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Grass);
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__settings__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Object_ObjectController__ = __webpack_require__(66);
+
+
+
+
+// Controller must be only one
+var Controller = {
+  // attribute
+  width: __WEBPACK_IMPORTED_MODULE_0__settings__["a" /* default */].width,
+  height: __WEBPACK_IMPORTED_MODULE_0__settings__["a" /* default */].height,
+  objects: [],
+  running: false,
+  // create new and return list of object
+  createObject: function createObject() {
+    if (!this.running) return this.objects;
+    var width = Math.floor(Math.random() * this.width);
+    var height = Math.floor(Math.random() * this.height);
+    this.objects.push(__WEBPACK_IMPORTED_MODULE_1__Object_ObjectController__["a" /* default */].genarateObject(width, height));
+    return this.objects;
+  },
+  move: function move() {
+    if (!this.running) return;
+    this.objects.forEach(function (item) {
+      item.move();
+    });
+  },
+  start: function start() {
+    var _this = this;
+
+    this.running = true;
+    setInterval(function () {
+      _this.createObject();
+    }, 4000);
+    setInterval(function () {
+      _this.move();
+    }, 1000);
+  },
+  stop: function stop() {
+    this.running = false;
+  }
+
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Controller);
+
+/***/ }),
+/* 69 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var settings = {
+  width: 100,
+  height: 100
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (settings);
 
 /***/ })
 /******/ ]);
