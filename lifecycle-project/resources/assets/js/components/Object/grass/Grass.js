@@ -2,9 +2,17 @@ function Grass(x,y) {
   this.x = x;
   this.y = y;
   this.size = 1;
-  this.move = function() {
+  this.life = 1;
+  this.atk = 0;
+  this.name = "Grass"
+  this.move = function(maxX,maxY) {
     // do nothing
-    console.log("moving");
+  }
+  this.attack = function(target){
+    // not attack anyone
+  }
+  this.isAttacked = function(from) {
+    this.life -= from.atk
   }
 }
 
